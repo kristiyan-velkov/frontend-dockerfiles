@@ -1,7 +1,7 @@
 # Variables
 IMAGE_NAME = remix-js-app
 IMAGE_TAG = latest
-CONTAINER_NAME = remix-app-container
+CONTAINER_NAME = remix-js-app-container
 HOST_PORT = 3000
 CONTAINER_PORT = 3000
 DOCKERFILE = Dockerfile

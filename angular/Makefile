@@ -1,7 +1,7 @@
 # Variables
 IMAGE_NAME = angular-app
 IMAGE_TAG = latest
-CONTAINER_NAME = angularapp-container
+CONTAINER_NAME = angular-app-container
 HOST_PORT = 3000
 CONTAINER_PORT = 80
 DOCKERFILE = Dockerfile

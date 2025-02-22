@@ -1,59 +1,121 @@
-# MyAngularApp
+# Welcome to Angular Production Docker file!
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
+This repository contains the configuration for running a Angular application using Docker for Production.
 
-## Development server
+- 📖 [Angulae docs](https://angular.dev/overview)
+- 📖 [Docker docs](https://docs.docker.com/)
 
-To start a local development server, run:
+**Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
 
-```bash
-ng serve
+---
+
+## Security
+
+This Docker image has been thoroughly scanned for vulnerabilities to ensure a secure environment for your Angular application. The image has passed all vulnerability assessments using Docker's built-in security tools, including Docker Scout. Regular updates to the base image and dependencies are recommended to maintain a high level of security.
+
+- **Article**: [Docker Scout in Action](https://levelup.gitconnected.com/docker-scout-in-action-63e7c812532a?sk=120903755538c5065585d458d5e1eaa8)
+
+---
+
+## Prerequisites
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine.
+- [Make](<https://en.wikipedia.org/wiki/Make_(software)>) installed to use the Makefile commands.
+
+---
+
+## Usage
+
+| Command                | Description                          |
+| ---------------------- | ------------------------------------ |
+| `make help`            | Show available commands.             |
+| `make build`           | Build the Docker image.              |
+| `make run`             | Run the Docker container.            |
+| `make build-run`       | Build and run the Docker container.  |
+| `make stop`            | Stop the Docker container.           |
+| `make restart`         | Restart the Docker container.        |
+| `make logs`            | Show logs from the Docker container. |
+| `make clean`           | Remove Docker image and container.   |
+| `make clean-container` | Remove only the Docker container.    |
+| `make clean-image`     | Remove only the Docker image.        |
+
+---
+
+### Environment Variables
+
+The following variables are defined in the `Makefile` and can be customized if needed:
+| Variable | Description | Default Value |
+|-----------------|-----------------------------------------------------------------------------------------------|--------------------------|
+| `IMAGE_NAME` | The name of the Docker image. | `angular-app` |
+| `CONTAINER_NAME`| The name of the Docker container. | `angular-app-container` |
+| `HOST_PORT` | The port on the host machine that the container will map to. | `80` |
+| `CONTAINER_PORT`| The port inside the Docker container where Nginx serves the application. For dev, use `4200`. | `80` |
+| `DOCKERFILE` | The Dockerfile to use. If using a standalone build, use `Dockerfile.standalone`. | `Dockerfile` |
+| `NODE_VERSION` | The version of Node.js used in the base image. Can be updated for easier migrations. | `22.14.0-alpine` |
+| `NGINX_VERSION` | The version of Nginx used in the export configuration. Can be customized or upgraded. | `1.27.4-alpine` |
+
+---
+
+### Build and Run with Docker Manually
+
+If you prefer to build and run the container manually, use the following commands:
+
+```sh
+docker build -t  angular-app .
+docker run -d --name angular-app-container -p 80:80 angular-app
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## Stopping and Removing Containers
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+To stop and remove the running container, use:
 
-```bash
-ng generate component component-name
+```sh
+docker stop  angular-app-container && docker rm angular-app-container
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Logs and Debugging
 
-```bash
-ng generate --help
+To check container logs:
+
+```sh
+docker logs -f angular-app-container
 ```
 
-## Building
+To access the running container shell:
 
-To build the project run:
-
-```bash
-ng build
+```sh
+docker exec -it angular-app-container sh
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Customizing the Build
 
-## Running unit tests
+To change the Node.js version, update the `NODE_VERSION` variable in the Dockerfile.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+To use a different Nginx version, modify the `NGINX_VERSION` variable in the Dockerfile or `.env` file.
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+### 📌 Contribution
 
-For end-to-end (e2e) testing, run:
+Contributions are always welcome, whether it's reporting issues, improving documentation, fixing bugs, or adding new features. This project is for everyone! 💙
+And yes, it's open-source! 🎉
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### 📬 Contact
 
-## Additional Resources
+Feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/kristiyan-velkov-763130b3/) or [Medium](https://medium.com/@kristiyanvelkov).
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+### ☕ Support My Work
+
+If you find my work helpful and would like to support me, consider donating via [Revolut](https://revolut.me/kristiyanvelkov) or [Buy Me a Coffee](https://www.buymeacoffee.com/kristiyanvelkov).
+
+---
+
+### License
+
+This project is licensed under the MIT License.

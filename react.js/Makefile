@@ -1,7 +1,7 @@
 # Variables
-IMAGE_NAME = reactjs-app
+IMAGE_NAME = react-js-app
 IMAGE_TAG = latest
-CONTAINER_NAME = reactjsapp-container
+CONTAINER_NAME = react-js-app-container
 HOST_PORT = 3000
 CONTAINER_PORT = 80
 DOCKERFILE = Dockerfile

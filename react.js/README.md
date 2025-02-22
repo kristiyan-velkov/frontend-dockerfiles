@@ -1,50 +1,122 @@
-# React + TypeScript + Vite
+# Welcome to React.js 19 Production Docker file!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the configuration for running a React.js application using Docker for Production.
 
-Currently, two official plugins are available:
+- 📖 [React.js docs](https://react.dev/reference/react)
+- 📖 [Docker docs](https://docs.docker.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+**Author**:  [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## Security
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+This Docker image has been thoroughly scanned for vulnerabilities to ensure a secure environment for your React.js application. The image has passed all vulnerability assessments using Docker's built-in security tools, including Docker Scout. Regular updates to the base image and dependencies are recommended to maintain a high level of security.
+
+- **Article**: [Docker Scout in Action](https://levelup.gitconnected.com/docker-scout-in-action-63e7c812532a?sk=120903755538c5065585d458d5e1eaa8)
+
+---
+
+## Prerequisites
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine.
+- [Make](https://en.wikipedia.org/wiki/Make_(software)) installed to use the Makefile commands.
+
+---
+
+## Usage
+
+| Command                | Description                          |
+| ---------------------- | ------------------------------------ |
+| `make help`            | Show available commands.             |
+| `make build`           | Build the Docker image.              |
+| `make run`             | Run the Docker container.            |
+| `make build-run`       | Build and run the Docker container.  |
+| `make stop`            | Stop the Docker container.           |
+| `make restart`         | Restart the Docker container.        |
+| `make logs`            | Show logs from the Docker container. |
+| `make clean`           | Remove Docker image and container.   |
+| `make clean-container` | Remove only the Docker container.    |
+| `make clean-image`     | Remove only the Docker image.        |
+
+---
+
+### Environment Variables
+
+The following variables are defined in the `Makefile` and can be customized if needed:
+| Variable | Description | Default Value |
+|-----------------|-----------------------------------------------------------------------------------------------|--------------------------|
+| `IMAGE_NAME` | The name of the Docker image. | `react-app` |
+| `CONTAINER_NAME`| The name of the Docker container. | `react-app-container` |
+| `HOST_PORT` | The port on the host machine that the container will map to. | `3000` |
+| `CONTAINER_PORT`| The port inside the Docker container where Nginx serves the application. For dev, use `3000`. | `3000` |
+| `DOCKERFILE` | The Dockerfile to use. If using a standalone build, use `Dockerfile.standalone`. | `Dockerfile` |
+| `NODE_VERSION` | The version of Node.js used in the base image. Can be updated for easier migrations. | `22.14.0-alpine` |
+| `NGINX_VERSION` | The version of Nginx used in the export configuration. Can be customized or upgraded. | `1.27.4-alpine` |
+
+---
+
+### Build and Run with Docker Manually
+
+If you prefer to build and run the container manually, use the following commands:
+
+```sh
+docker build -t  react-js-app .
+docker run -d --name react-js-app-container -p 3000:80 react-js-app
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Stopping and Removing Containers
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+To stop and remove the running container, use:
+
+```sh
+docker stop  react-js-app-container && docker rm react-js-app-container
 ```
+
+## Logs and Debugging
+
+To check container logs:
+
+```sh
+docker logs -f react-js-app-container
+```
+
+To access the running container shell:
+
+```sh
+docker exec -it react-js-app-container sh
+```
+
+## Customizing the Build
+
+To change the Node.js version, update the `NODE_VERSION` variable in the Dockerfile.
+
+To use a different Nginx version, modify the `NGINX_VERSION` variable in the Dockerfile or `.env` file.
+
+---
+
+### 📌 Contribution
+
+Contributions are always welcome, whether it's reporting issues, improving documentation, fixing bugs, or adding new features. This project is for everyone! 💙
+And yes, it's open-source! 🎉
+
+---
+
+### 📬 Contact
+
+Feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/kristiyan-velkov-763130b3/) or [Medium](https://medium.com/@kristiyanvelkov).
+
+---
+
+### ☕ Support My Work
+
+If you find my work helpful and would like to support me, consider donating via [Revolut](https://revolut.me/kristiyanvelkov) or [Buy Me a Coffee](https://www.buymeacoffee.com/kristiyanvelkov).
+
+---
+
+### License
+
+This project is licensed under the MIT License.

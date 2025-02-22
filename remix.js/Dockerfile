@@ -11,7 +11,7 @@ FROM node:${NODE_VERSION} AS builder
 WORKDIR /app
 
 # Copy package-related files first to leverage Docker's caching mechanism
-COPY package.json package-lock.json ./
+COPY --link package.json package-lock.json ./
 
 # # Set environment variables for the build process
 # ENV NODE_ENV=production
@@ -20,7 +20,7 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 # Copy the rest of the application source code into the container
-COPY . .
+COPY --link . .
 
 # Build the Remix.js application (outputs to /app/build)
 RUN npm run build
@@ -38,12 +38,15 @@ ENV NODE_ENV=production
 ENV PORT=3000
 
 # Copy the built server and client assets from the builder stage
-COPY --from=builder /app/build /app/build
-COPY --from=builder /app/package.json /app/package.json
-COPY --from=builder /app/package-lock.json /app/package-lock.json
+COPY --link --from=builder /app/build /app/build
+COPY --link --from=builder /app/package-lock.json /app/package-lock.json
+COPY --link --from=builder /app/package.json /app/package.json
 
 # Install production-only dependencies
 RUN npm ci --omit=dev
+
+# Switch to the non-root user
+USER node 
 
 # Expose the application port (Remix typically runs on 3000)
 EXPOSE 3000

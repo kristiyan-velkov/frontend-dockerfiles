@@ -11,13 +11,13 @@ FROM node:${NODE_VERSION} AS builder
 WORKDIR /app
 
 # Copy package-related files first to leverage Docker's caching mechanism
-COPY package.json package-lock.json ./
+COPY --link package.json package-lock.json ./
 
 # Install project dependencies using npm ci (ensures a clean, reproducible install)
 RUN npm ci
 
 # Copy the rest of the application source code into the container
-COPY . .
+COPY --link . .
 
 # Build the Angular application
 RUN npm run build
@@ -37,12 +37,12 @@ RUN mkdir -p /var/cache/nginx/client_temp && \
 USER nginx
 
 # Copy custom Nginx config
-COPY --chown=nginx:nginx nginx.conf /etc/nginx/nginx.conf
+COPY --link --chown=nginx:nginx nginx.conf /etc/nginx/nginx.conf
 
 # Application name
 ARG APP_NAME=my-angular-app
 # Copy the static build output from the build stage to Nginx's default HTML serving directory
-COPY --from=builder --chown=nginx:nginx /app/dist/${APP_NAME}/browser /usr/share/nginx/html
+COPY --link --from=builder --chown=nginx:nginx /app/dist/${APP_NAME}/browser /usr/share/nginx/html
 
 # Expose port 80 to allow HTTP traffic
 EXPOSE 80

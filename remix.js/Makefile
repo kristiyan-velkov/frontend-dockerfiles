@@ -22,7 +22,7 @@ help:
 	@echo "  make clean          - Remove Docker image and container"
 
 # Build the Docker image
-build:
+built:
 	docker build \
 		--build-arg NODE_VERSION=$(NODE_VERSION) \
 		--build-arg NGINX_VERSION=$(NGINX_VERSION) \

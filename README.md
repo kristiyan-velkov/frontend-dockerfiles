@@ -29,15 +29,26 @@ Clone the repository and navigate to the desired framework directory:
 git clone https://github.com/kristiyan-velkov/frontend-dockerfiles.git
 cd frontend-dockerfiles/<framework>
 ```
+---
+### 📌 Contribution 
+Contributions are always welcome, whether it's reporting issues, improving documentation, fixing bugs, or adding new features. This project is for everyone! 💙
+And yes, it's open-source! 🎉
 
-## Contributing
+---
+### 📬 Contact
 
-Contributions are welcome! If you have improvements, optimizations, or new Dockerfiles for other frontend frameworks, feel free to open a pull request.
+Feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/kristiyan-velkov-763130b3/) or [Medium](https://medium.com/@kristiyanvelkov).
 
-## License
+---
 
-This project is licensed under the **MIT License**.
+### ☕ Support My Work
 
-## Author
+If you find my work helpful and would like to support me, consider donating via [Revolut](https://revolut.me/kristiyanvelkov) or [Buy Me a Coffee](https://www.buymeacoffee.com/kristiyanvelkov).
 
-**Kristiyan Velkov** – [LinkedIn](https://www.linkedin.com/in/kristiyan-velkov-763130b3)
+---
+
+### License
+
+This project is licensed under the MIT License.
+
+

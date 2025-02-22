@@ -1,0 +1,27 @@
+# Use a lightweight Node.js base image
+ARG NODE_VERSION=22.14.0-alpine
+FROM node:${NODE_VERSION} AS base
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json first for caching
+COPY package.json package-lock.json ./
+
+# Ensure the correct permissions for the non-root user
+RUN chown -R node:node /app
+
+# Switch to the node user BEFORE installing dependencies
+USER node
+
+# Install dependencies (including devDependencies for development)
+RUN npm install --no-audit
+
+# Copy the entire project (after dependencies for better caching)
+COPY --chown=node:node . .
+
+# Expose Next.js default port
+EXPOSE 3000
+
+# Default command to start the Next.js development server
+CMD ["npm", "run", "dev"]

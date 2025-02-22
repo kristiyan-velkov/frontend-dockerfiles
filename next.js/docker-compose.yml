@@ -1,0 +1,23 @@
+services:
+  nextjs:
+    # Configuration for the Next.js service
+    build:
+      context: . # Set the build context to the current directory
+      dockerfile: Dockerfile.dev # Specify the Dockerfile to use (Dockerfile.dev)
+    command: npm run dev # Command to start the Next.js development server
+    ports:
+      - "3000:3000" # Map port 3000 in the container to port 3000 on the host
+    volumes:
+      - .:/app # Mount the current directory to /app in the container for real-time code updates
+    develop:
+      watch:
+        # Sync changes in the Next.js app directory for live reloading
+        - action: sync
+          path: ./app # Path to watch for changes (local directory)
+          target: /app # Target path in the container where changes are synced
+          ignore:
+            - node_modules/ # Exclude node_modules/ from syncing to avoid performance issues
+
+        # Rebuild the service when package.json changes (e.g., after adding new dependencies)
+        - action: rebuild
+          path: package.json # Path to watch for triggering rebuilds

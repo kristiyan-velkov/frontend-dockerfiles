@@ -1,0 +1,28 @@
+# Ignore dependencies and build output
+node_modules
+out
+
+# Ignore environment and config files (sensitive data)
+*.env*
+!.env.production  # Allow production env file if needed
+*.log
+
+# Ignore local development files and directories
+.git
+.gitignore
+Dockerfile
+.dockerignore
+README.md
+
+# Ignore editor and OS-specific files
+.vscode
+.idea
+*.swp
+.DS_Store
+Thumbs.db
+
+# Ignore npm debug and lock files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

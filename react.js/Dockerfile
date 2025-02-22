@@ -1,5 +1,5 @@
 # =========================================
-# Stage 1: Build the Next.js Application
+# Stage 1: Build the React.js Application
 # =========================================
 ARG NODE_VERSION=22.14.0-alpine
 ARG NGINX_VERSION=1.27.4-alpine
@@ -11,15 +11,15 @@ FROM node:${NODE_VERSION} AS builder
 WORKDIR /app
 
 # Copy package-related files first to leverage Docker's caching mechanism
-COPY package.json package-lock.json ./
+COPY --link package.json package-lock.json ./
 
 # Install project dependencies using npm ci (ensures a clean, reproducible install)
 RUN npm ci
 
 # Copy the rest of the application source code into the container
-COPY . .
+COPY --link . .
 
-# Build the Next.js application for static export (outputs to /app/out)
+# Build the React.js application (outputs to /app/dist)
 RUN npm run build
 
 # =========================================
@@ -37,10 +37,10 @@ RUN mkdir -p /var/cache/nginx/client_temp && \
 USER nginx
 
 # Copy custom Nginx config
-COPY --chown=nginx:nginx nginx.conf /etc/nginx/nginx.conf
+COPY --link --chown=nginx:nginx nginx.conf /etc/nginx/nginx.conf
 
 # Copy the static build output from the build stage to Nginx's default HTML serving directory
-COPY --from=builder --chown=nginx:nginx /app/dist /usr/share/nginx/html
+COPY --link --from=builder --chown=nginx:nginx /app/dist /usr/share/nginx/html
 
 # Expose port 80 to allow HTTP traffic
 EXPOSE 80

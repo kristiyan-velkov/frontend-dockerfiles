@@ -1,5 +1,5 @@
 # =========================================
-# Stage 1: Build the Next.js Application
+# Stage 1: Build the React.js Application
 # =========================================
 ARG NODE_VERSION=22.14.0-alpine
 ARG NGINX_VERSION=1.27.4-alpine
@@ -19,7 +19,7 @@ RUN npm ci
 # Copy the rest of the application source code into the container
 COPY . .
 
-# Build the Next.js application for static export (outputs to /app/out)
+# Build the React.js application (outputs to /app/dist)
 RUN npm run build
 
 # =========================================

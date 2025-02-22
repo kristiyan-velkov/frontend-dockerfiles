@@ -2,7 +2,6 @@
 # Stage 1: Build the Remix.js Application
 # =========================================
 ARG NODE_VERSION=22.14.0-alpine
-ARG NGINX_VERSION=1.27.4-alpine
 
 # Use a lightweight Node.js image for building (customizable via ARG)
 FROM node:${NODE_VERSION} AS builder
@@ -51,5 +50,4 @@ USER node
 # Expose the application port (Remix typically runs on 3000)
 EXPOSE 3000
 
-CMD ["npm", "run", "start"]
-
+ENTRYPOINT ["npm", "run", "start"]

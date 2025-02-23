@@ -2,7 +2,7 @@
 
 This repository contains the configuration for running a React.js application using Docker for Production.
 
-- 📖 [React.js docs](https://react.dev/reference/react)
+- 📖 [React.js Deployment docs](https://handsonreact.com/docs/build-deploy)
 - 📖 [Docker docs](https://docs.docker.com/)
 
 **Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)

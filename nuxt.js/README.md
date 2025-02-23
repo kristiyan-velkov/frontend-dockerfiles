@@ -2,7 +2,7 @@
 
 This repository contains the configuration for running a Nuxt.js application using Docker for Production.
 
-- 📖 [Nuxt.js docs](https://analogjs.org/docs/features/deployment/overview)
+- 📖 [Nuxt.js Deployment docs](https://nuxt.com/docs/getting-started/deployment)
 - 📖 [Docker docs](https://docs.docker.com/)
 
 **Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)

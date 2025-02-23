@@ -4,6 +4,9 @@
 
 This repository contains the configuration for running a Next.js 15 application using Docker. It supports development, production, and static export modes with three different Dockerfiles and a docker-compose.yml file.
 
+- 📖 [Next.js Deployment docs](https://nextjs.org/docs/pages/building-your-application/deploying)
+- 📖 [Docker docs](https://docs.docker.com/)
+
 ## More about me
 
 - [Blogs on Medium](https://medium.com/@kristiyanvelkov)

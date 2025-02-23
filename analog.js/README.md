@@ -2,7 +2,7 @@
 
 This repository contains the configuration for running a Analog.js application using Docker for Production.
 
-- 📖 [Analog.js docs](https://analogjs.org/docs/features/deployment/overview)
+- 📖 [Analog.js Deployment docs](https://analogjs.org/docs/features/deployment/overview)
 - 📖 [Docker docs](https://docs.docker.com/)
 
 **Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)

@@ -73,7 +73,7 @@ The following variables are defined in the `Taskfile` and `Makefile` and can be 
 If you prefer to build and run the container manually, use the following commands:
 
 ```sh
-docker build -t  analog-js-app .
+docker build -t analog-js-app .
 docker run -d --name analog-js-app-container -p 3000:3000 analog-js-app
 ```
 

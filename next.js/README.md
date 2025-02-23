@@ -53,14 +53,17 @@ _or if you prefer Make_:
 
 ### Environment Variables
 
-The following variables are defined in the `Makefile` and can be customized if needed:
+The following variables are defined in the `Taskfile` and `Makefile` and can be customized if needed:
 
-- `IMAGE_NAME`: The name of the Docker image. Default is `nextjs-app`.
-- `CONTAINER_NAME`: The name of the Docker container. Default is `nextjs-container`.
-- `HOST_PORT`: The port on the host machine that the container will map to. Default is `3000`.
-- `CONTAINER_PORT`: The port inside the Docker container where Nginx serves the application. Default is `80`. For dev use `3000`
-- `DOCKERFILE`: The Dockerfile to use. Default is `Dockerfile`. If you want to use standalone version of the build use Dockerfile.standalone -`NODE_VERSION`: The version of Node.js used in the base image. Default is `22.14.0-alpine`. This can be updated for easier migrations to newer versions.
-- `NGINX_VERSION`: The version of Nginx used in the export configuration. Default is `1.27.4-alpine`. This can be customized to match specific requirements or upgraded when necessary.
+| Variable         | Description                                                                           | Default Value           |
+| ---------------- | ------------------------------------------------------------------------------------- | ----------------------- |
+| `IMAGE_NAME`     | The name of the Docker image.                                                         | `next-js-app`           |
+| `CONTAINER_NAME` | The name of the Docker container.                                                     | `next-js-app-container` |
+| `HOST_PORT`      | The port on the host machine that the container will map to.                          | `3000`                  |
+| `CONTAINER_PORT` | The port inside the Docker container where Nginx serves the application.              | `80`                    |
+| `DOCKERFILE`     | The Dockerfile to use.                                                                | `Dockerfile.export`     |
+| `NODE_VERSION`   | The version of Node.js used in the base image. Can be updated for easier migrations.  | `22.14.0-alpine`        |
+| `NGINX_VERSION`  | The version of Nginx used in the export configuration. Can be customized or upgraded. | `1.27.4-alpine`         |
 
 ---
 
@@ -133,3 +136,32 @@ docker compose up --watch
 - **Sync Changes**: Automatically syncs changes made in your local ./app directory with the /app directory inside the container. -**Rebuild Dependencies**: Automatically rebuilds the service when package.json changes, e.g., when you install a new package.
 - **File Syncing**: Changes to source files will be reflected inside the container in real-time. However, the node_modules folder is excluded to improve performance.
 
+---
+
+### ☕ Support My Work
+
+If you find my work helpful and would like to support me, consider donating via:
+
+- [Revolut](https://revolut.me/kristiyanvelkov)
+- [Buy Me a Coffee](https://www.buymeacoffee.com/kristiyanvelkov)
+- [GitHub Sponsors](https://github.com/sponsors/kristiyan-velkov)
+
+Your support helps me continue creating valuable content for the community. Thank you! 🚀
+
+---
+
+### 📬 Contact me
+
+If you’d like to connect, feel free to reach out via:
+
+- [LinkedIn](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
+- [Medium](https://medium.com/@kristiyanvelkov)
+- [Discord](https://discord.gg/dcdYZfsd)
+
+Looking forward to chatting with you! 🚀
+
+---
+
+### License
+
+This project is licensed under the MIT License.

@@ -65,7 +65,8 @@ _or if you prefer Make_:
 
 ### Environment Variables
 
-The following variables are defined in the `Taskfile` or `Makefile` and can be customized if needed:
+The following variables are defined in the `Taskfile` and `Makefile` and can be customized if needed:
+
 | Variable | Description |
 |-----------------|-----------------------------------------------------------------------------------------------|
 | `IMAGE_NAME` | The name of the Docker image. |

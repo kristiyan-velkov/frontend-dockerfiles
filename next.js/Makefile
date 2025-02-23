@@ -1,7 +1,7 @@
 # Variables
 IMAGE_NAME = nextjs-app
 IMAGE_TAG = latest
-CONTAINER_NAME = nextjsapp-container
+CONTAINER_NAME = next-js-app-container
 HOST_PORT = 3000
 CONTAINER_PORT = 80
 DOCKERFILE = Dockerfile.export

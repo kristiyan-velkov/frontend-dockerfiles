@@ -1,6 +1,6 @@
 # Frontend Prod Dockerfiles
 
-Production-ready **Dockerfiles** for **React.js, Angular, Vue.js, Next.js, Remix.js, Nuxt.js** applications.
+Production-ready **Dockerfiles** for **React.js, Angular, Vue.js, Next.js, Remix.js,Analog.js, Nuxt.js** applications.
 
 These Dockerfiles are optimized for **performance, security, and minimal image size** to ensure efficient and scalable deployments.
 

@@ -2,7 +2,7 @@
 
 This repository contains the configuration for running a Remix.js V2 application using Docker for Production.
 
-- 📖 [Remix Deployments docs](https://remix.run/docs/en/main/guides/deployment)
+- 📖 [Remix Deployment docs](https://remix.run/docs/en/main/guides/deployment)
 - 📖 [Docker docs](https://docs.docker.com/)
 
 **Author**

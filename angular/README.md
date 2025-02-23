@@ -62,7 +62,7 @@ If you prefer to build and run the container manually, use the following command
 
 ```sh
 docker build -t  angular-app .
-docker run -d --name angular-app-container -p 80:80 angular-app
+docker run -d --name angular-app-container -p 42000:80 angular-app
 ```
 
 ---
@@ -112,7 +112,13 @@ Feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/kristiyan
 
 ### ☕ Support My Work
 
-If you find my work helpful and would like to support me, consider donating via [Revolut](https://revolut.me/kristiyanvelkov) or [Buy Me a Coffee](https://www.buymeacoffee.com/kristiyanvelkov).
+If you find my work helpful and would like to support me, consider donating via:
+
+- [Revolut](https://revolut.me/kristiyanvelkov)
+- [Buy Me a Coffee](https://www.buymeacoffee.com/kristiyanvelkov)
+- [GitHub Sponsors](https://github.com/sponsors/kristiyan-velkov)
+
+Your support helps me continue creating valuable content for the community. Thank you! 🚀
 
 ---
 

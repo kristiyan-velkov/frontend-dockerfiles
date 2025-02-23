@@ -48,8 +48,8 @@ The following variables are defined in the `Makefile` and can be customized if n
 |-----------------|-----------------------------------------------------------------------------------------------|--------------------------|
 | `IMAGE_NAME` | The name of the Docker image. | `nuxt-js-app` |
 | `CONTAINER_NAME`| The name of the Docker container. | `nuxt-js-app-container` |
-| `HOST_PORT` | The port on the host machine that the container will map to. | `4200` |
-| `CONTAINER_PORT`| The port inside the Docker container where Nginx serves the application. | `80` |
+| `HOST_PORT` | The port on the host machine that the container will map to. | `3000` |
+| `CONTAINER_PORT`| The port inside the Docker container where Nginx serves the application. | `3000` |
 | `DOCKERFILE` | The Dockerfile to use. | `Dockerfile` |
 | `NODE_VERSION` | The version of Node.js used in the base image. Can be updated for easier migrations. | `22.14.0-alpine` |
 
@@ -92,8 +92,6 @@ docker exec -it nuxt-js-app-container sh
 
 To change the Node.js version, update the `NODE_VERSION` variable in the Dockerfile.
 
-To use a different Nginx version, modify the `NGINX_VERSION` variable in the Dockerfile or `.env` file.
-
 ---
 
 ### 📌 Contribution
@@ -111,7 +109,13 @@ Feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/kristiyan
 
 ### ☕ Support My Work
 
-If you find my work helpful and would like to support me, consider donating via [Revolut](https://revolut.me/kristiyanvelkov) or [Buy Me a Coffee](https://www.buymeacoffee.com/kristiyanvelkov).
+If you find my work helpful and would like to support me, consider donating via:
+
+- [Revolut](https://revolut.me/kristiyanvelkov)
+- [Buy Me a Coffee](https://www.buymeacoffee.com/kristiyanvelkov)
+- [GitHub Sponsors](https://github.com/sponsors/kristiyan-velkov)
+
+Your support helps me continue creating valuable content for the community. Thank you! 🚀
 
 ---
 

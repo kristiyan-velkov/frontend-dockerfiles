@@ -2,7 +2,7 @@
 
 This repository contains the configuration for running a Vue.js application using Docker for Production.
 
-- 📖 [Vue.js docs](https://vuejs.org/)
+- 📖 [Vue.js Deployment docs](https://cli.vuejs.org/guide/deployment.html)
 - 📖 [Docker docs](https://docs.docker.com/)
 
 **Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
@@ -20,30 +20,34 @@ This Docker image has been thoroughly scanned for vulnerabilities to ensure a se
 ## Prerequisites
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine.
+- [Task](https://taskfile.dev/installation/) installed to use the Task commands.
+
+_or if you prefer Make_:
+
 - [Make](<https://en.wikipedia.org/wiki/Make_(software)>) installed to use the Makefile commands.
 
 ---
 
 ## Usage
 
-| Command                | Description                          |
-| ---------------------- | ------------------------------------ |
-| `make help`            | Show available commands.             |
-| `make build`           | Build the Docker image.              |
-| `make run`             | Run the Docker container.            |
-| `make build-run`       | Build and run the Docker container.  |
-| `make stop`            | Stop the Docker container.           |
-| `make restart`         | Restart the Docker container.        |
-| `make logs`            | Show logs from the Docker container. |
-| `make clean`           | Remove Docker image and container.   |
-| `make clean-container` | Remove only the Docker container.    |
-| `make clean-image`     | Remove only the Docker image.        |
+| Task              | Taskfile Command       | Makefile Command       | Description                          |
+| ----------------- | ---------------------- | ---------------------- | ------------------------------------ |
+| `help`            | `task`                 | `make`                 | Show available commands.             |
+| `build`           | `task build`           | `make build`           | Build the Docker image.              |
+| `run`             | `task run`             | `make run`             | Run the Docker container.            |
+| `build-run`       | `task build-run`       | `make build-run`       | Build and run the Docker container.  |
+| `stop`            | `task stop`            | `make stop`            | Stop the Docker container.           |
+| `restart`         | `task restart`         | `make restart`         | Restart the Docker container.        |
+| `logs`            | `task logs`            | `make logs`            | Show logs from the Docker container. |
+| `clean`           | `task clean`           | `make clean`           | Remove Docker image and container.   |
+| `clean-container` | `task clean-container` | `make clean-container` | Remove only the Docker container.    |
+| `clean-image`     | `task clean-image`     | `make clean-image`     | Remove only the Docker image.        |
 
 ---
 
 ### Environment Variables
 
-The following variables are defined in the `Makefile` and can be customized if needed:
+The following variables are defined in the `Taskfile` or `Makefile` and can be customized if needed:
 | Variable | Description | Default Value |
 |-----------------|-----------------------------------------------------------------------------------------------|--------------------------|
 | `IMAGE_NAME` | The name of the Docker image. | `vue-js-app` |

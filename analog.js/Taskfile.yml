@@ -1,0 +1,68 @@
+version: '3'
+
+vars:
+  IMAGE_NAME: analog-js-app-app
+  IMAGE_TAG: latest
+  CONTAINER_NAME: analog-js-app-container
+  HOST_PORT: 3000
+  CONTAINER_PORT: 3000
+  DOCKERFILE: Dockerfile
+  NODE_VERSION: 22.14.0-alpine
+  NODE_ENV: production
+
+tasks:
+  build:
+    desc: "Build the Docker image"
+    cmds:
+      - docker build
+          --build-arg NODE_VERSION={{.NODE_VERSION}}
+          -f {{.DOCKERFILE}} -t {{.IMAGE_NAME}}:{{.IMAGE_TAG}} .
+
+  run:
+    desc: "Run the Docker container"
+    cmds:
+      - docker rm -f {{.CONTAINER_NAME}} 2>/dev/null
+      - docker run -d --name {{.CONTAINER_NAME}} -p {{.HOST_PORT}}:{{.CONTAINER_PORT}} {{.IMAGE_NAME}}:{{.IMAGE_TAG}}
+
+  build-run:
+    desc: "Build and run the Docker container in one step"
+    cmds:
+      - task: build
+      - task: run
+
+  stop:
+    desc: "Stop the running Docker container"
+    cmds:
+      - docker stop {{.CONTAINER_NAME}}
+
+  restart:
+    desc: "Restart the Docker container"
+    cmds:
+      - task: stop
+      - task: run
+
+  logs:
+    desc: "Show real-time logs from the Docker container"
+    cmds:
+      - docker logs -f {{.CONTAINER_NAME}}
+
+  clean:
+    desc: "Remove the Docker container and image"
+    cmds:
+      - task: clean-container
+      - task: clean-image
+
+  clean-container:
+    desc: "Remove the Docker container only"
+    cmds:
+      - docker rm -f {{.CONTAINER_NAME}} 2>/dev/null
+
+  clean-image:
+    desc: "Remove the Docker image only"
+    cmds:
+      - docker rmi {{.IMAGE_NAME}}:{{.IMAGE_TAG}} 2>/dev/null
+
+  default:
+    desc: "Show available commands"
+    cmds:
+      - task --list

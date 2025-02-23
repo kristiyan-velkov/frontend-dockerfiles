@@ -19,7 +19,7 @@ This repository contains the configuration for running a Next.js 15 application 
 This Docker image has been thoroughly scanned for vulnerabilities to ensure a secure environment for your Next.js 15 application. The image has passed all vulnerability assessments using Docker's built-in security tools, including Docker Scout. Regular updates to the base image and dependencies are recommended to maintain a high level of security.
 
 <div align="center">
-  <img src="./public/docker-scout.png" alt="Docker Scout check" />
+  <img src="../images/next-js-security.png" alt="Docker Scout check" />
 </div>
 
 - **Article**: [Docker Scout in Action](https://levelup.gitconnected.com/docker-scout-in-action-63e7c812532a?sk=120903755538c5065585d458d5e1eaa8)
@@ -66,7 +66,7 @@ The following variables are defined in the `Taskfile` and `Makefile` and can be 
 | `CONTAINER_PORT` | The port inside the Docker container where Nginx serves the application.              | `80`                    |
 | `DOCKERFILE`     | The Dockerfile to use.                                                                | `Dockerfile.export`     |
 | `NODE_VERSION`   | The version of Node.js used in the base image. Can be updated for easier migrations.  | `22.14.0-alpine`        |
-| `NGINX_VERSION`  | The version of Nginx used in the export configuration. Can be customized or upgraded. | `1.27.4-alpine`         |
+| `NGINX_VERSION`  | The version of Nginx used in the export configuration. Can be customized or upgraded. | `alpine3.21`            |
 
 ---
 

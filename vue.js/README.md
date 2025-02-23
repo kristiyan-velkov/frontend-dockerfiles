@@ -5,13 +5,21 @@ This repository contains the configuration for running a Vue.js application usin
 - 📖 [Vue.js Deployment docs](https://cli.vuejs.org/guide/deployment.html)
 - 📖 [Docker docs](https://docs.docker.com/)
 
-**Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
+**Author**
+
+- [Kristiyan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
+- [Blog - Medium](https://medium.com/@kristiyanvelkov)
 
 ---
 
 ## Security
 
 This Docker image has been thoroughly scanned for vulnerabilities to ensure a secure environment for your Vue.js application. The image has passed all vulnerability assessments using Docker's built-in security tools, including Docker Scout. Regular updates to the base image and dependencies are recommended to maintain a high level of security.
+
+
+<div align="center">
+  <img src="../images/vue-js-security.png" alt="Docker Scout check" />
+</div>
 
 - **Article**: [Docker Scout in Action](https://levelup.gitconnected.com/docker-scout-in-action-63e7c812532a?sk=120903755538c5065585d458d5e1eaa8)
 
@@ -57,7 +65,7 @@ The following variables are defined in the `Taskfile` and `Makefile` and can be 
 | `CONTAINER_PORT` | The port inside the Docker container where Nginx serves the application.             | `80`                   |
 | `DOCKERFILE`     | The Dockerfile to use.                                                               | `Dockerfile`           |
 | `NODE_VERSION`   | The version of Node.js used in the base image. Can be updated for easier migrations. | `22.14.0-alpine`       |
-| `NGINX_VERSION`  | The version of Nginx used in the export configuration.                               | `1.27.4-alpine`        |
+| `NGINX_VERSION`  | The version of Nginx used in the export configuration.                               | `alpine3.21`           |
 
 ---
 

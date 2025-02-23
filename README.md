@@ -4,7 +4,10 @@ Production-ready **Dockerfiles** for **React.js, Angular, Vue.js, Next.js, Remix
 
 These Dockerfiles are optimized for **performance, security, and minimal image size** to ensure efficient and scalable deployments.
 
-**Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
+**Author**
+
+- [Kristiyan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
+- [Blog - Medium](https://medium.com/@kristiyanvelkov)
 
 ## Features
 
@@ -67,15 +70,15 @@ _or if you prefer Make_:
 
 The following variables are defined in the `Taskfile` and `Makefile` and can be customized if needed:
 
-| Variable | Description |
-|-----------------|-----------------------------------------------------------------------------------------------|
-| `IMAGE_NAME` | The name of the Docker image. |
-| `CONTAINER_NAME`| The name of the Docker container. |
-| `HOST_PORT` | The port on the host machine that the container will map to. |
-| `CONTAINER_PORT`| The port inside the Docker container where Nginx serves the application. |
-| `DOCKERFILE` | The Dockerfile to use. |
-| `NODE_VERSION` | The version of Node.js used in the base image. Can be updated for easier migrations. |
-| `NGINX_VERSION` | The version of Nginx used in the export configuration. |
+| Variable         | Description                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------ |
+| `IMAGE_NAME`     | The name of the Docker image.                                                        |
+| `CONTAINER_NAME` | The name of the Docker container.                                                    |
+| `HOST_PORT`      | The port on the host machine that the container will map to.                         |
+| `CONTAINER_PORT` | The port inside the Docker container where Nginx serves the application.             |
+| `DOCKERFILE`     | The Dockerfile to use.                                                               |
+| `NODE_VERSION`   | The version of Node.js used in the base image. Can be updated for easier migrations. |
+| `NGINX_VERSION`  | The version of Nginx used in the export configuration.                               |
 
 ---
 

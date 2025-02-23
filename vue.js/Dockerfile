@@ -2,7 +2,7 @@
 # Stage 1: Build the Vue.js Application
 # =========================================
 ARG NODE_VERSION=22.14.0-alpine
-ARG NGINX_VERSION=1.27.4-alpine
+ARG NGINX_VERSION=alpine3.21
 
 # Use a lightweight Node.js image for building (customizable via ARG)
 FROM node:${NODE_VERSION} AS builder
@@ -26,12 +26,7 @@ RUN npm run build
 # Stage 2: Prepare Nginx to Serve Static Files
 # =========================================
 
-FROM nginx:${NGINX_VERSION} AS runner
-
-# Preconfigure minimal directories as root (only for client_temp)
-RUN mkdir -p /var/cache/nginx/client_temp && \
-    chown -R nginx:nginx /var/cache/nginx && \
-    chmod -R 755 /var/cache/nginx
+FROM nginxinc/nginx-unprivileged:${NGINX_VERSION} AS runner
 
 # Use a built-in non-root user for security best practices
 USER nginx
@@ -39,8 +34,7 @@ USER nginx
 # Copy custom Nginx config
 COPY --link --chown=nginx:nginx nginx.conf /etc/nginx/nginx.conf
 
-# Application name
-ARG APP_NAME=my-angular-app
+
 # Copy the static build output from the build stage to Nginx's default HTML serving directory
 COPY --link --from=builder --chown=nginx:nginx /app/dist /usr/share/nginx/html
 

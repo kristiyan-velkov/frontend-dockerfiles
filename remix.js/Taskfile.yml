@@ -1,14 +1,14 @@
 version: '3'
 
 vars:
-  IMAGE_NAME: remix-js-app
+  IMAGE_NAME: frontend-production/remix-js-app
   IMAGE_TAG: latest
   CONTAINER_NAME: remix-js-app-container
   HOST_PORT: 3000
   CONTAINER_PORT: 3000
   DOCKERFILE: Dockerfile
   NODE_VERSION: 22.14.0-alpine
-  NGINX_VERSION: 1.27.4-alpine
+  NGINX_VERSION: alpine3.21
   NODE_ENV: production
 
 tasks:

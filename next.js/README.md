@@ -128,3 +128,4 @@ docker compose up --watch
 
 - **Sync Changes**: Automatically syncs changes made in your local ./app directory with the /app directory inside the container. -**Rebuild Dependencies**: Automatically rebuilds the service when package.json changes, e.g., when you install a new package.
 - **File Syncing**: Changes to source files will be reflected inside the container in real-time. However, the node_modules folder is excluded to improve performance.
+

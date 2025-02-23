@@ -1,8 +1,8 @@
-# Welcome to Angular Production Docker file!
+# Welcome to Nuxt.js Production Docker file!
 
-This repository contains the configuration for running a Angular application using Docker for Production.
+This repository contains the configuration for running a Nuxt.js application using Docker for Production.
 
-- 📖 [Angular docs](https://angular.dev/overview)
+- 📖 [Nuxt.js docs](https://analogjs.org/docs/features/deployment/overview)
 - 📖 [Docker docs](https://docs.docker.com/)
 
 **Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
@@ -11,7 +11,7 @@ This repository contains the configuration for running a Angular application usi
 
 ## Security
 
-This Docker image has been thoroughly scanned for vulnerabilities to ensure a secure environment for your Angular application. The image has passed all vulnerability assessments using Docker's built-in security tools, including Docker Scout. Regular updates to the base image and dependencies are recommended to maintain a high level of security.
+This Docker image has been thoroughly scanned for vulnerabilities to ensure a secure environment for your Nuxt.js application. The image has passed all vulnerability assessments using Docker's built-in security tools, including Docker Scout. Regular updates to the base image and dependencies are recommended to maintain a high level of security.
 
 - **Article**: [Docker Scout in Action](https://levelup.gitconnected.com/docker-scout-in-action-63e7c812532a?sk=120903755538c5065585d458d5e1eaa8)
 
@@ -46,13 +46,12 @@ This Docker image has been thoroughly scanned for vulnerabilities to ensure a se
 The following variables are defined in the `Makefile` and can be customized if needed:
 | Variable | Description | Default Value |
 |-----------------|-----------------------------------------------------------------------------------------------|--------------------------|
-| `IMAGE_NAME` | The name of the Docker image. | `angular-app` |
-| `CONTAINER_NAME`| The name of the Docker container. | `angular-app-container` |
-| `HOST_PORT` | The port on the host machine that the container will map to. | `4200` |
-| `CONTAINER_PORT`| The port inside the Docker container where Nginx serves the application. | `80` |
+| `IMAGE_NAME` | The name of the Docker image. | `nuxt-js-app` |
+| `CONTAINER_NAME`| The name of the Docker container. | `nuxt-js-app-container` |
+| `HOST_PORT` | The port on the host machine that the container will map to. | `3000` |
+| `CONTAINER_PORT`| The port inside the Docker container where Nginx serves the application. | `3000` |
 | `DOCKERFILE` | The Dockerfile to use. | `Dockerfile` |
 | `NODE_VERSION` | The version of Node.js used in the base image. Can be updated for easier migrations. | `22.14.0-alpine` |
-| `NGINX_VERSION` | The version of Nginx used in the export configuration. | `1.27.4-alpine` |
 
 ---
 
@@ -61,8 +60,8 @@ The following variables are defined in the `Makefile` and can be customized if n
 If you prefer to build and run the container manually, use the following commands:
 
 ```sh
-docker build -t  angular-app .
-docker run -d --name angular-app-container -p 42000:80 angular-app
+docker build -t nuxt-js-app .
+docker run -d --name nuxt-js-app-container -p 3000:3000 nuxt-js-app
 ```
 
 ---
@@ -72,7 +71,7 @@ docker run -d --name angular-app-container -p 42000:80 angular-app
 To stop and remove the running container, use:
 
 ```sh
-docker stop  angular-app-container && docker rm angular-app-container
+docker stop  nuxt-js-app-container && docker rm nuxt-js-app-container
 ```
 
 ## Logs and Debugging
@@ -80,20 +79,18 @@ docker stop  angular-app-container && docker rm angular-app-container
 To check container logs:
 
 ```sh
-docker logs -f angular-app-container
+docker logs -f nuxt-js-app-container
 ```
 
 To access the running container shell:
 
 ```sh
-docker exec -it angular-app-container sh
+docker exec -it nuxt-js-app-container sh
 ```
 
 ## Customizing the Build
 
 To change the Node.js version, update the `NODE_VERSION` variable in the Dockerfile.
-
-To use a different Nginx version, modify the `NGINX_VERSION` variable in the Dockerfile or `.env` file.
 
 ---
 

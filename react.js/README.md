@@ -112,7 +112,13 @@ Feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/kristiyan
 
 ### ☕ Support My Work
 
-If you find my work helpful and would like to support me, consider donating via [Revolut](https://revolut.me/kristiyanvelkov) or [Buy Me a Coffee](https://www.buymeacoffee.com/kristiyanvelkov).
+If you find my work helpful and would like to support me, consider donating via:
+
+- [Revolut](https://revolut.me/kristiyanvelkov)
+- [Buy Me a Coffee](https://www.buymeacoffee.com/kristiyanvelkov)
+- [GitHub Sponsors](https://github.com/sponsors/kristiyan-velkov)
+
+Your support helps me continue creating valuable content for the community. Thank you! 🚀
 
 ---
 

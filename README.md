@@ -1,6 +1,10 @@
 # Frontend Prod Dockerfiles
 
-Production-ready **Dockerfiles** for **React.js, Angular, Vue.js, and Next.js** applications. These Dockerfiles are optimized for **performance, security, and minimal image size** to ensure efficient and scalable deployments.
+Production-ready **Dockerfiles** for **React.js, Angular, Vue.js, Next.js, Remix.js, Nuxt.js** applications.
+
+These Dockerfiles are optimized for **performance, security, and minimal image size** to ensure efficient and scalable deployments.
+
+**Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
 
 ## Features
 
@@ -38,15 +42,27 @@ And yes, it's open-source! 🎉
 
 ---
 
-### 📬 Contact
+### ☕ Support My Work
 
-Feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/kristiyan-velkov-763130b3/) or [Medium](https://medium.com/@kristiyanvelkov).
+If you find my work helpful and would like to support me, consider donating via:
+
+- [Revolut](https://revolut.me/kristiyanvelkov)
+- [Buy Me a Coffee](https://www.buymeacoffee.com/kristiyanvelkov)
+- [GitHub Sponsors](https://github.com/sponsors/kristiyan-velkov)
+
+Your support helps me continue creating valuable content for the community. Thank you! 🚀
 
 ---
 
-### ☕ Support My Work
+### 📬 Contact me
 
-If you find my work helpful and would like to support me, consider donating via [Revolut](https://revolut.me/kristiyanvelkov) or [Buy Me a Coffee](https://www.buymeacoffee.com/kristiyanvelkov).
+If you’d like to connect, feel free to reach out via:
+
+- [LinkedIn](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
+- [Medium](https://medium.com/@kristiyanvelkov)
+- [Discord](https://discord.gg/dcdYZfsd)
+
+Looking forward to chatting with you! 🚀
 
 ---
 

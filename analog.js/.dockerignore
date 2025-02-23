@@ -1,0 +1,57 @@
+# =========================================
+# Ignore dependencies and build output
+# =========================================
+node_modules/
+dist/
+out/
+.server/
+.nitro/
+.output/
+
+# Ignore Vite, Nitro, and Analog.js specific build artifacts
+.vite/
+.vitepress/
+.temp/
+*.cache
+coverage/
+
+# =========================================
+# Ignore environment and config files (sensitive data)
+# =========================================
+*.env*
+!.env.production  # Allow production env file if needed
+*.log
+
+# Ignore TypeScript build artifacts
+*.tsbuildinfo
+
+# Ignore lockfiles (optional if using Docker for package installation)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================================
+# Ignore local development files
+# =========================================
+.git/
+.gitignore
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# =========================================
+# Ignore Docker-related files (to avoid copying unnecessary configs)
+# =========================================
+Dockerfile
+.dockerignore
+docker-compose.yml
+docker-compose.override.yml
+
+# =========================================
+# Ignore build-specific cache files
+# =========================================
+*.DS_Store
+*.lock

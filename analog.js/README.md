@@ -5,13 +5,20 @@ This repository contains the configuration for running a Analog.js application u
 - 📖 [Analog.js Deployment docs](https://analogjs.org/docs/features/deployment/overview)
 - 📖 [Docker docs](https://docs.docker.com/)
 
-**Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
+**Author**
+
+- [Kristiyan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
+- [Blog - Medium](https://medium.com/@kristiyanvelkov)
 
 ---
 
 ## Security
 
 This Docker image has been thoroughly scanned for vulnerabilities to ensure a secure environment for your Analog.js application. The image has passed all vulnerability assessments using Docker's built-in security tools, including Docker Scout. Regular updates to the base image and dependencies are recommended to maintain a high level of security.
+
+<div align="center">
+  <img src="../images/analog-js-security.png" alt="Docker Scout check" />
+</div>
 
 - **Article**: [Docker Scout in Action](https://levelup.gitconnected.com/docker-scout-in-action-63e7c812532a?sk=120903755538c5065585d458d5e1eaa8)
 

@@ -1,6 +1,18 @@
 {
   "name": "my-app",
-  "version": "0.1.0",
+  "version": "0.0.1",
+  "homepage": "https://github.com/kristiyan-velkov/frontend-prod-dockerfiles",
+  "author": {
+    "name": "Kristiyan Velkov",
+    "url": "https://www.linkedin.com/in/kristiyan-velkov-763130b3/"
+  },
+  "bugs": {
+    "url": "https://github.com/kristiyan-velkov/frontend-prod-dockerfiles/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/kristiyan-velkov"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

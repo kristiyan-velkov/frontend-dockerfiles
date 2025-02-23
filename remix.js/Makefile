@@ -25,7 +25,6 @@ help:
 built:
 	docker build \
 		--build-arg NODE_VERSION=$(NODE_VERSION) \
-		--build-arg NGINX_VERSION=$(NGINX_VERSION) \
 		-f $(DOCKERFILE) -t $(IMAGE_NAME):$(IMAGE_TAG) .
 
 # Run the Docker container

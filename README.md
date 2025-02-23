@@ -16,10 +16,9 @@ Production-ready **Dockerfiles** for **React.js, Angular, Vue.js, and Next.js** 
 - **Next.js** v15 ✅
 - **Remix.js** - v2 ✅
 - **Angular** - v19 ✅
-- **Analog.js** - ❌
+- **Analog.js** - v1 ✅
 - **Vue.js** - v3 ✅
 - **Nuxt.js** - ❌
-
 
 ## Getting Started
 
@@ -29,12 +28,16 @@ Clone the repository and navigate to the desired framework directory:
 git clone https://github.com/kristiyan-velkov/frontend-dockerfiles.git
 cd frontend-dockerfiles/<framework>
 ```
+
 ---
-### 📌 Contribution 
+
+### 📌 Contribution
+
 Contributions are always welcome, whether it's reporting issues, improving documentation, fixing bugs, or adding new features. This project is for everyone! 💙
 And yes, it's open-source! 🎉
 
 ---
+
 ### 📬 Contact
 
 Feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/kristiyan-velkov-763130b3/) or [Medium](https://medium.com/@kristiyanvelkov).
@@ -50,5 +53,3 @@ If you find my work helpful and would like to support me, consider donating via 
 ### License
 
 This project is licensed under the MIT License.
-
-

@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  IMAGE_NAME: analog-js-app-app
+  IMAGE_NAME: analog-js-app
   IMAGE_TAG: latest
   CONTAINER_NAME: analog-js-app-container
   HOST_PORT: 3000

@@ -15,7 +15,7 @@ tasks:
     desc: "Build the Docker image"
     cmds:
       - docker build
-          --build-arg NODE_VERSION="{{.NODE_VERSION}}"
+          --build-arg NODE_VERSION={{.NODE_VERSION}}
           -f {{.DOCKERFILE}} -t {{.IMAGE_NAME}}:{{.IMAGE_TAG}} .
 
   run:

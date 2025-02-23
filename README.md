@@ -17,9 +17,9 @@ Production-ready **Dockerfiles** for **React.js, Angular, Vue.js, and Next.js** 
 - **Remix.js** - v2 ✅
 - **Angular** - v19 ✅
 - **Analog.js** - ❌
-
 - **Vue.js** - v3 ✅
 - **Nuxt.js** - ❌
+
 
 ## Getting Started
 

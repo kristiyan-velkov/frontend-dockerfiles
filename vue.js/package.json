@@ -1,0 +1,49 @@
+{
+  "name": "my-vue-app",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "test:unit": "vitest",
+    "prepare": "cypress install",
+    "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
+    "test:e2e:dev": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress open --e2e'",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.0",
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^22.13.4",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitejs/plugin-vue-jsx": "^4.1.1",
+    "@vitest/eslint-plugin": "1.1.31",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.4.0",
+    "@vue/test-utils": "^2.4.6",
+    "@vue/tsconfig": "^0.7.0",
+    "cypress": "^14.0.3",
+    "eslint": "^9.20.1",
+    "eslint-plugin-cypress": "^4.1.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "jiti": "^2.4.2",
+    "jsdom": "^26.0.0",
+    "npm-run-all2": "^7.0.2",
+    "prettier": "^3.5.1",
+    "start-server-and-test": "^2.0.10",
+    "typescript": "~5.7.3",
+    "vite": "^6.1.0",
+    "vite-plugin-vue-devtools": "^7.7.2",
+    "vitest": "^3.0.5",
+    "vue-tsc": "^2.2.2"
+  }
+}

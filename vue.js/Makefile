@@ -1,8 +1,8 @@
 # Variables
-IMAGE_NAME = angular-app
+IMAGE_NAME = vue-js-app
 IMAGE_TAG = latest
-CONTAINER_NAME = angular-app-container
-HOST_PORT = 4200
+CONTAINER_NAME = vue-js-app-container
+HOST_PORT = 3000
 CONTAINER_PORT = 80
 DOCKERFILE = Dockerfile
 NODE_VERSION = 22.14.0-alpine

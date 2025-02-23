@@ -1,17 +1,17 @@
-# Welcome to Remix Production Docker file!
+# Welcome to Vue.js Production Docker file!
 
-This repository contains the configuration for running a Remix.js V2 application using Docker for Production.
+This repository contains the configuration for running a Vue.js application using Docker for Production.
 
-- 📖 [Remix docs](https://remix.run/docs)
+- 📖 [Vue.js docs](https://vuejs.org/)
 - 📖 [Docker docs](https://docs.docker.com/)
 
-**Author**:  [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
+**Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
 
 ---
 
 ## Security
 
-This Docker image has been thoroughly scanned for vulnerabilities to ensure a secure environment for your React.js application. The image has passed all vulnerability assessments using Docker's built-in security tools, including Docker Scout. Regular updates to the base image and dependencies are recommended to maintain a high level of security.
+This Docker image has been thoroughly scanned for vulnerabilities to ensure a secure environment for your Vue.js application. The image has passed all vulnerability assessments using Docker's built-in security tools, including Docker Scout. Regular updates to the base image and dependencies are recommended to maintain a high level of security.
 
 - **Article**: [Docker Scout in Action](https://levelup.gitconnected.com/docker-scout-in-action-63e7c812532a?sk=120903755538c5065585d458d5e1eaa8)
 
@@ -20,7 +20,9 @@ This Docker image has been thoroughly scanned for vulnerabilities to ensure a se
 ## Prerequisites
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine.
-- [Make](https://en.wikipedia.org/wiki/Make_(software)) installed to use the Makefile commands.
+- [Make](<https://en.wikipedia.org/wiki/Make_(software)>) installed to use the Makefile commands.
+
+---
 
 ## Usage
 
@@ -44,13 +46,13 @@ This Docker image has been thoroughly scanned for vulnerabilities to ensure a se
 The following variables are defined in the `Makefile` and can be customized if needed:
 | Variable | Description | Default Value |
 |-----------------|-----------------------------------------------------------------------------------------------|--------------------------|
-| `IMAGE_NAME` | The name of the Docker image. | `remix-js-app` |
-| `CONTAINER_NAME`| The name of the Docker container. | `remix-js-app-container` |
-| `HOST_PORT` | The port on the host machine that the container will map to. | `3000` |
-| `CONTAINER_PORT`| The port inside the Docker container| `3000` |
+| `IMAGE_NAME` | The name of the Docker image. | `vue-js-app` |
+| `CONTAINER_NAME`| The name of the Docker container. | `vue-js-app-container` |
+| `HOST_PORT` | The port on the host machine that the container will map to. | `300` |
+| `CONTAINER_PORT`| The port inside the Docker container where Nginx serves the application. | `80` |
 | `DOCKERFILE` | The Dockerfile to use. | `Dockerfile` |
-| `NODE_VERSION` | The version of Node.js used in the base image.  | `22.14.0-alpine` |
-
+| `NODE_VERSION` | The version of Node.js used in the base image. Can be updated for easier migrations. | `22.14.0-alpine` |
+| `NGINX_VERSION` | The version of Nginx used in the export configuration. | `1.27.4-alpine` |
 
 ---
 
@@ -59,16 +61,18 @@ The following variables are defined in the `Makefile` and can be customized if n
 If you prefer to build and run the container manually, use the following commands:
 
 ```sh
-docker build -t remix-js-app.
-docker run -d --name remix-js-app-container -p 3000:80 remix-js-app
+docker build -t vue-js-app .
+docker run -d --name vue-js-app-container -p 80:80 vue-js-app
 ```
+
+---
 
 ## Stopping and Removing Containers
 
 To stop and remove the running container, use:
 
 ```sh
-docker stop remix-js-app-container && docker rm remix-js-app-container
+docker stop vue-js-app-container && docker rm vue-js-app-container
 ```
 
 ## Logs and Debugging
@@ -76,25 +80,30 @@ docker stop remix-js-app-container && docker rm remix-js-app-container
 To check container logs:
 
 ```sh
-docker logs -f remix-js-app-container
+docker logs -f vue-js-app-container
 ```
 
 To access the running container shell:
 
 ```sh
-docker exec -it remix-js-app-container sh
+docker exec -it vue-js-app-container sh
 ```
 
 ## Customizing the Build
 
 To change the Node.js version, update the `NODE_VERSION` variable in the Dockerfile.
 
+To use a different Nginx version, modify the `NGINX_VERSION` variable in the Dockerfile or `.env` file.
+
 ---
-### 📌 Contribution 
+
+### 📌 Contribution
+
 Contributions are always welcome, whether it's reporting issues, improving documentation, fixing bugs, or adding new features. This project is for everyone! 💙
 And yes, it's open-source! 🎉
 
 ---
+
 ### 📬 Contact
 
 Feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/kristiyan-velkov-763130b3/) or [Medium](https://medium.com/@kristiyanvelkov).
@@ -110,5 +119,3 @@ If you find my work helpful and would like to support me, consider donating via 
 ### License
 
 This project is licensed under the MIT License.
-
-

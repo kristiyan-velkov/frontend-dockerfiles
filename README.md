@@ -12,13 +12,14 @@ Production-ready **Dockerfiles** for **React.js, Angular, Vue.js, and Next.js** 
 
 ## Supported Frameworks / Libraries
 
-- **React.js** ✅
-- **Next.js**  ✅
-- **Remix.js**  ✅
-- **Angular**  ✅
-- **Analog.js** ❌
-- **Vue.js** ❌
-- **Nuxt.js** ❌
+- **React.js** - v19 ✅
+- **Next.js** v15 ✅
+- **Remix.js** - v2 ✅
+- **Angular** - v19 ✅
+- **Analog.js** - ❌
+- **Vue.js** - v3 ✅
+- **Nuxt.js** - ❌
+
 
 ## Getting Started
 

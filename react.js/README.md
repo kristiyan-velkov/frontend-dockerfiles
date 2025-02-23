@@ -5,8 +5,7 @@ This repository contains the configuration for running a React.js application us
 - 📖 [React.js docs](https://react.dev/reference/react)
 - 📖 [Docker docs](https://docs.docker.com/)
 
-
-**Author**:  [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
+**Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
 
 ---
 
@@ -21,7 +20,7 @@ This Docker image has been thoroughly scanned for vulnerabilities to ensure a se
 ## Prerequisites
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine.
-- [Make](https://en.wikipedia.org/wiki/Make_(software)) installed to use the Makefile commands.
+- [Make](<https://en.wikipedia.org/wiki/Make_(software)>) installed to use the Makefile commands.
 
 ---
 
@@ -50,8 +49,8 @@ The following variables are defined in the `Makefile` and can be customized if n
 | `IMAGE_NAME` | The name of the Docker image. | `react-app` |
 | `CONTAINER_NAME`| The name of the Docker container. | `react-app-container` |
 | `HOST_PORT` | The port on the host machine that the container will map to. | `3000` |
-| `CONTAINER_PORT`| The port inside the Docker container where Nginx serves the application. For dev, use `3000`. | `3000` |
-| `DOCKERFILE` | The Dockerfile to use. If using a standalone build, use `Dockerfile.standalone`. | `Dockerfile` |
+| `CONTAINER_PORT`| The port inside the Docker container where Nginx serves the application. | `80` |
+| `DOCKERFILE` | The Dockerfile to use. | `Dockerfile` |
 | `NODE_VERSION` | The version of Node.js used in the base image. Can be updated for easier migrations. | `22.14.0-alpine` |
 | `NGINX_VERSION` | The version of Nginx used in the export configuration. Can be customized or upgraded. | `1.27.4-alpine` |
 

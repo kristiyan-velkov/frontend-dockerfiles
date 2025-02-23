@@ -48,24 +48,25 @@ _or if you prefer Make_:
 
 ## Usage
 
-| Task              | Taskfile Command       | Makefile Command       | Description                          |
-| ----------------- | ---------------------- | ---------------------- | ------------------------------------ |
-| `help`            | `task`                 | `make`                 | Show available commands.             |
-| `build`           | `task build`           | `make build`           | Build the Docker image.              |
-| `run`             | `task run`             | `make run`             | Run the Docker container.            |
-| `build-run`       | `task build-run`       | `make build-run`       | Build and run the Docker container.  |
-| `stop`            | `task stop`            | `make stop`            | Stop the Docker container.           |
-| `restart`         | `task restart`         | `make restart`         | Restart the Docker container.        |
-| `logs`            | `task logs`            | `make logs`            | Show logs from the Docker container. |
-| `clean`           | `task clean`           | `make clean`           | Remove Docker image and container.   |
-| `clean-container` | `task clean-container` | `make clean-container` | Remove only the Docker container.    |
-| `clean-image`     | `task clean-image`     | `make clean-image`     | Remove only the Docker image.        |
+| Taskfile Command       | Makefile Command       | Description                          |
+| ---------------------- | ---------------------- | ------------------------------------ |
+| `task`                 | `make`                 | Show available commands.             |
+| `task build`           | `make build`           | Build the Docker image.              |
+| `task run`             | `make run`             | Run the Docker container.            |
+| `task build-run`       | `make build-run`       | Build and run the Docker container.  |
+| `task stop`            | `make stop`            | Stop the Docker container.           |
+| `task restart`         | `make restart`         | Restart the Docker container.        |
+| `task logs`            | `make logs`            | Show logs from the Docker container. |
+| `task clean`           | `make clean`           | Remove Docker image and container.   |
+| `task clean-container` | `make clean-container` | Remove only the Docker container.    |
+| `task clean-image`     | `make clean-image`     | Remove only the Docker image.        |
 
 ---
 
 ### Environment Variables
 
-The following variables are defined in the `Taskfile` or `Makefile` and can be customized if needed:
+The following variables are defined in the `Taskfile` and `Makefile` and can be customized if needed:
+
 | Variable | Description |
 |-----------------|-----------------------------------------------------------------------------------------------|
 | `IMAGE_NAME` | The name of the Docker image. |

@@ -6,10 +6,11 @@ vars:
   CONTAINER_NAME: angular-app-container
   HOST_PORT: 4200
   CONTAINER_PORT: 80
-  DOCKERFILE: Dockerfile
+  DOCKERFILE: Dockerfile.server
   NODE_VERSION: 22.14.0-alpine
   NGINX_VERSION: 1.27.4-alpine
   NODE_ENV: production
+  APP_NAME: my-angular-app
 
 tasks:
   build:
@@ -18,6 +19,7 @@ tasks:
       - docker build
           --build-arg NODE_VERSION={{.NODE_VERSION}}
           --build-arg NGINX_VERSION={{.NGINX_VERSION}}
+          --build-arg APP_NAME={{.APP_NAME}}
           -f {{.DOCKERFILE}} -t {{.IMAGE_NAME}}:{{.IMAGE_TAG}} .
 
   run:

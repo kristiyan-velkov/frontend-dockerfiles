@@ -8,6 +8,7 @@ DOCKERFILE = Dockerfile
 NODE_VERSION = 22.14.0-alpine
 NGINX_VERSION = 1.27.4-alpine
 NODE_ENV=production
+APP_NAME=my-angular-app
 
 # Default target
 .PHONY: help
@@ -26,6 +27,7 @@ build:
 	docker build \
 		--build-arg NODE_VERSION=$(NODE_VERSION) \
 		--build-arg NGINX_VERSION=$(NGINX_VERSION) \
+		--build-arg APP_NAME=$(APP_NAME) \
 		-f $(DOCKERFILE) -t $(IMAGE_NAME):$(IMAGE_TAG) .
 
 # Run the Docker container

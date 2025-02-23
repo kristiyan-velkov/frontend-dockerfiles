@@ -2,7 +2,7 @@
 
 This repository contains the configuration for running a Analog.js application using Docker for Production.
 
-- 📖 [Analog.js docs](https://analogjs.org/docs/features/deployment/overview)
+- 📖 [Analog.js Deployment docs](https://analogjs.org/docs/features/deployment/overview)
 - 📖 [Docker docs](https://docs.docker.com/)
 
 **Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
@@ -47,16 +47,17 @@ _or if you prefer Make_:
 
 ### Environment Variables
 
-The following variables are defined in the `Makefile` and can be customized if needed:
-| Variable | Description | Default Value |
-|-----------------|-----------------------------------------------------------------------------------------------|--------------------------|
-| `IMAGE_NAME` | The name of the Docker image. | `analog-js-app` |
-| `CONTAINER_NAME`| The name of the Docker container. | `analog-js-app-container` |
-| `HOST_PORT` | The port on the host machine that the container will map to. | `3000` |
-| `CONTAINER_PORT`| The port inside the Docker container| `3000` |
-| `DOCKERFILE` | The Dockerfile to use. | `Dockerfile` |
-| `NODE_VERSION` | The version of Node.js used in the base image. Can be updated for easier migrations. | `22.14.0-alpine` |
-| `NGINX_VERSION` | The version of Nginx used in the export configuration. | `1.27.4-alpine` |
+The following variables are defined in the `Taskfile` and `Makefile` and can be customized if needed:
+
+| Variable         | Description                                                                          | Default Value             |
+| ---------------- | ------------------------------------------------------------------------------------ | ------------------------- |
+| `IMAGE_NAME`     | The name of the Docker image.                                                        | `analog-js-app`           |
+| `CONTAINER_NAME` | The name of the Docker container.                                                    | `analog-js-app-container` |
+| `HOST_PORT`      | The port on the host machine that the container will map to.                         | `3000`                    |
+| `CONTAINER_PORT` | The port inside the Docker container                                                 | `3000`                    |
+| `DOCKERFILE`     | The Dockerfile to use.                                                               | `Dockerfile`              |
+| `NODE_VERSION`   | The version of Node.js used in the base image. Can be updated for easier migrations. | `22.14.0-alpine`          |
+| `NGINX_VERSION`  | The version of Nginx used in the export configuration.                               | `1.27.4-alpine`           |
 
 ---
 

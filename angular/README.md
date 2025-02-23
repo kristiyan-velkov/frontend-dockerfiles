@@ -2,7 +2,7 @@
 
 This repository contains the configuration for running a Angular application using Docker for Production.
 
-- 📖 [Angular docs](https://angular.dev/overview)
+- 📖 [Angular Deployment docs](https://angular.dev/tools/cli/deployment)
 - 📖 [Docker docs](https://docs.docker.com/)
 
 **Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)
@@ -47,16 +47,17 @@ _or if you prefer Make_:
 
 ### Environment Variables
 
-The following variables are defined in the `Makefile` and can be customized if needed:
-| Variable | Description | Default Value |
-|-----------------|-----------------------------------------------------------------------------------------------|--------------------------|
-| `IMAGE_NAME` | The name of the Docker image. | `angular-app` |
-| `CONTAINER_NAME`| The name of the Docker container. | `angular-app-container` |
-| `HOST_PORT` | The port on the host machine that the container will map to. | `4200` |
-| `CONTAINER_PORT`| The port inside the Docker container where Nginx serves the application. | `80` |
-| `DOCKERFILE` | The Dockerfile to use. | `Dockerfile` |
-| `NODE_VERSION` | The version of Node.js used in the base image. Can be updated for easier migrations. | `22.14.0-alpine` |
-| `NGINX_VERSION` | The version of Nginx used in the export configuration. | `1.27.4-alpine` |
+The following variables are defined in the `Taskfile` and `Makefile` and can be customized if needed:
+
+| Variable         | Description                                                                          | Default Value           |
+| ---------------- | ------------------------------------------------------------------------------------ | ----------------------- |
+| `IMAGE_NAME`     | The name of the Docker image.                                                        | `angular-app`           |
+| `CONTAINER_NAME` | The name of the Docker container.                                                    | `angular-app-container` |
+| `HOST_PORT`      | The port on the host machine that the container will map to.                         | `4200`                  |
+| `CONTAINER_PORT` | The port inside the Docker container where Nginx serves the application.             | `80`                    |
+| `DOCKERFILE`     | The Dockerfile to use. Avaliable `DOCKERFILE` and `Dockerfile.server`                | `Dockerfile`            |
+| `NODE_VERSION`   | The version of Node.js used in the base image. Can be updated for easier migrations. | `22.14.0-alpine`        |
+| `NGINX_VERSION`  | The version of Nginx used in the export configuration.                               | `1.27.4-alpine`         |
 
 ---
 
@@ -65,7 +66,7 @@ The following variables are defined in the `Makefile` and can be customized if n
 If you prefer to build and run the container manually, use the following commands:
 
 ```sh
-docker build -t  angular-app .
+docker build -t angular-app .
 docker run -d --name angular-app-container -p 42000:80 angular-app
 ```
 

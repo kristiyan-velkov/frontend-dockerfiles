@@ -1,28 +1,52 @@
 # Ignore dependencies and build output
-node_modules
-out
+node_modules/
+dist/
+build/
+out/
+.tmp/
+.cache/
+
+# Ignore Vite, Remix, and Webpack-specific build artifacts
+.vite/
+.vitepress/
+.eslintcache
+.npm/
+coverage/
+jest/
+cypress/
+cypress/screenshots/
+cypress/videos/
+reports/
 
 # Ignore environment and config files (sensitive data)
 *.env*
 !.env.production  # Allow production env file if needed
 *.log
 
-# Ignore local development files and directories
-.git
-.gitignore
-Dockerfile
-.dockerignore
-README.md
+# Ignore TypeScript build artifacts (if using TypeScript)
+*.tsbuildinfo
 
-# Ignore editor and OS-specific files
-.vscode
-.idea
-*.swp
-.DS_Store
-Thumbs.db
-
-# Ignore npm debug and lock files
+# Ignore lockfiles (optional if using Docker for package installation)
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+# Ignore local development files
+.git/
+.gitignore
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Ignore Docker-related files (to avoid copying unnecessary configs)
+Dockerfile
+.dockerignore
+docker-compose.yml
+docker-compose.override.yml
+
+# Ignore build-specific cache files
+*.DS_Store
+*.lock

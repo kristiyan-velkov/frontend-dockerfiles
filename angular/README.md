@@ -2,7 +2,7 @@
 
 This repository contains the configuration for running a Angular application using Docker for Production.
 
-- 📖 [Angulae docs](https://angular.dev/overview)
+- 📖 [Angular docs](https://angular.dev/overview)
 - 📖 [Docker docs](https://docs.docker.com/)
 
 **Author**: [Krisityan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/)

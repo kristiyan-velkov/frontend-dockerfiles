@@ -6,7 +6,7 @@ HOST_PORT = 3000
 CONTAINER_PORT = 80
 DOCKERFILE = Dockerfile
 NODE_VERSION = 22.14.0-alpine
-NGINX_VERSION = 1.27.4-alpine
+NGINX_VERSION = alpine3.21
 NODE_ENV=production
 
 # Default target

@@ -57,7 +57,7 @@ The following variables are defined in the `Taskfile` and `Makefile` and can be 
 | `CONTAINER_PORT` | The port inside the Docker container where Nginx serves the application.              | `80`                  |
 | `DOCKERFILE`     | The Dockerfile to use.                                                                | `Dockerfile`          |
 | `NODE_VERSION`   | The version of Node.js used in the base image. Can be updated for easier migrations.  | `22.14.0-alpine`      |
-| `NGINX_VERSION`  | The version of Nginx used in the export configuration. Can be customized or upgraded. | `1.27.4-alpine`       |
+| `NGINX_VERSION`  | The version of Nginx used in the export configuration. Can be customized or upgraded. | `alpine3.21`          |
 
 ---
 

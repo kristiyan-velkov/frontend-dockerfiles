@@ -12,9 +12,6 @@ WORKDIR /app
 # Copy package-related files first to leverage Docker's caching mechanism
 COPY --link package.json package-lock.json ./
 
-# # Set environment variables for the build process
-# ENV NODE_ENV=production
-
 # Install project dependencies using npm ci (ensures a clean, reproducible install)
 RUN npm ci
 

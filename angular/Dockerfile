@@ -32,13 +32,13 @@ FROM nginxinc/nginx-unprivileged:${NGINX_VERSION} AS runner
 USER nginx
 
 # Copy custom Nginx config
-COPY --link --chown=nginx:nginx nginx.conf /etc/nginx/nginx.conf
+COPY --link nginx.conf /etc/nginx/nginx.conf
 
 # Application name
 ARG APP_NAME=my-angular-app
 
 # Copy the static build output from the build stage to Nginx's default HTML serving directory
-COPY --link --from=builder --chown=nginx:nginx /app/dist/${APP_NAME}/browser /usr/share/nginx/html
+COPY --link --from=builder /app/dist/${APP_NAME}/browser /usr/share/nginx/html
 
 # Expose port 80 to allow HTTP traffic
 EXPOSE 80
